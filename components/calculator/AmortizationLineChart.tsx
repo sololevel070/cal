@@ -39,37 +39,37 @@ export default function AmortizationLineChart({ principal, rate, term, extraPaym
         <LineChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
           <XAxis dataKey="year" stroke="#64748B" fontSize={12} tickLine={false} axisLine={false} />
-          <YAxis 
-            tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`} 
-            stroke="#64748B" 
-            fontSize={12} 
-            tickLine={false} 
-            axisLine={false} 
+          <YAxis
+            tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
+            stroke="#64748B"
+            fontSize={12}
+            tickLine={false}
+            axisLine={false}
           />
-          <Tooltip 
+          <Tooltip
             formatter={(value: any) => formatCurrency(Number(value))}
             labelStyle={{ color: '#1E293B', fontWeight: 'bold' }}
             contentStyle={{ borderRadius: '8px', border: '1px solid #E2E8F0', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
           />
           <Legend wrapperStyle={{ paddingTop: '20px' }} />
-          <Line 
-            type="monotone" 
-            dataKey="standardBalance" 
-            name="Standard Balance" 
-            stroke="#2563EB" 
-            strokeWidth={3} 
-            dot={false} 
-            activeDot={{ r: 6 }} 
+          <Line
+            type="monotone"
+            dataKey="standardBalance"
+            name="Standard Balance"
+            stroke="#004fc8"
+            strokeWidth={3}
+            dot={false}
+            activeDot={{ r: 6 }}
           />
           {extraPayment > 0 && (
-            <Line 
-              type="monotone" 
-              dataKey="acceleratedBalance" 
-              name="With Extra Payment" 
-              stroke="#10B981" 
-              strokeWidth={3} 
-              dot={false} 
-              activeDot={{ r: 6 }} 
+            <Line
+              type="monotone"
+              dataKey="acceleratedBalance"
+              name="With Extra Payment"
+              stroke="#10ae76"
+              strokeWidth={3}
+              dot={false}
+              activeDot={{ r: 6 }}
             />
           )}
         </LineChart>

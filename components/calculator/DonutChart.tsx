@@ -13,8 +13,8 @@ interface Props {
 export default function DonutChart({ summary, homePrice, downPayment }: Props) {
   const principal = homePrice - downPayment;
   const data = [
-    { name: "Principal", value: principal, color: "#2563EB" },
-    { name: "Interest", value: summary.totalInterest, color: "#10B981" },
+    { name: "Principal", value: principal, color: "#004fc8" },
+    { name: "Interest", value: summary.totalInterest, color: "#10ae76" },
     { name: "Property Tax", value: summary.monthlyTax * 12 * 30, color: "#F59E0B" },
     { name: "Home Insurance", value: summary.monthlyInsurance * 12 * 30, color: "#EF4444" },
   ];

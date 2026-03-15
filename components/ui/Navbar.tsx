@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { Home, Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -24,24 +25,30 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2 text-primary font-bold text-xl">
-              <Home className="w-6 h-6" />
-              ClearNest
+            <Link href="/" className="flex items-center">
+              {/* Show icon only on small screens (mobile) */}
+              <div className="block sm:hidden">
+                <Image src="/clearicon.svg" alt="ClearNest Icon" width={32} height={32} className="h-8 w-auto" priority />
+              </div>
+              {/* Show full logo on medium and larger screens (tablets, desktop) */}
+              <div className="hidden sm:block">
+                <Image src="/clearlogo.svg" alt="ClearNest Logo" width={160} height={40} className="h-8 w-auto min-h-[32px] max-h-[40px]" priority />
+              </div>
             </Link>
           </div>
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <Link key={link.name} href={link.href} className="text-text-primary hover:text-primary font-medium text-sm lg:text-base">
                 {link.name}
               </Link>
             ))}
           </div>
-          <div className="hidden md:flex items-center">
-            <Link href="/mortgage-calculator" className="bg-primary text-white px-4 py-2 rounded-full font-medium hover:bg-blue-700 transition-colors text-sm lg:text-base">
+          <div className="hidden lg:flex items-center">
+            <Link href="/mortgage-calculator" className="bg-primary text-white px-4 py-2 rounded-full font-medium hover:brightness-110 transition-all text-sm lg:text-base">
               Get Started Free
             </Link>
           </div>
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             <button onClick={toggleMenu} className="text-text-primary hover:text-primary focus:outline-none">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -55,7 +62,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-b border-border overflow-hidden"
+            className="lg:hidden bg-white border-b border-border overflow-hidden"
           >
             <div className="px-4 pt-2 pb-4 space-y-1">
               {navLinks.map((link) => (
@@ -72,7 +79,7 @@ export default function Navbar() {
                 <Link
                   href="/mortgage-calculator"
                   onClick={() => setIsOpen(false)}
-                  className="block w-full text-center bg-primary text-white px-4 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors"
+                  className="block w-full text-center bg-primary text-white px-4 py-3 rounded-full font-medium hover:brightness-110 transition-all"
                 >
                   Get Started Free
                 </Link>

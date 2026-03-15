@@ -7,13 +7,15 @@ import * as z from "zod";
 import { calculateMortgageSummary } from "@/lib/calculations";
 import { formatCurrency, formatPercentage } from "@/lib/formatters";
 import { motion } from "motion/react";
-import DonutChart from "./DonutChart";
+import dynamic from "next/dynamic";
+import DownloadPDFButton from "./DownloadPDFButton";
+
+const DonutChart = dynamic(() => import("./DonutChart"), { ssr: false });
+const AmortizationLineChart = dynamic(() => import("./AmortizationLineChart"), { ssr: false });
+const PaymentBreakdownBar = dynamic(() => import("./PaymentBreakdownBar"), { ssr: false });
 import ResultSummary from "./ResultSummary";
-import AmortizationLineChart from "./AmortizationLineChart";
-import PaymentBreakdownBar from "./PaymentBreakdownBar";
 import AmortizationTable from "./AmortizationTable";
 import StickyMobileBar from "./StickyMobileBar";
-import ShareResultsButton from "./ShareResultsButton";
 import ScenarioComparison from "./ScenarioComparison";
 import ExtraPaymentToggle from "./ExtraPaymentToggle";
 
@@ -65,7 +67,7 @@ export default function MortgageForm() {
         Object.keys(parsed).forEach((key) => {
           setValue(key as keyof FormData, parsed[key]);
         });
-      } catch (e) {}
+      } catch (e) { }
     }
   }, [setValue]);
 
@@ -107,15 +109,10 @@ export default function MortgageForm() {
     );
   }, [values]);
 
-  const handleSave = () => {
-    localStorage.setItem("mortgageCalcState", JSON.stringify(values));
-    alert("Calculation saved!");
-  };
-
   if (!isClient) return null;
 
   return (
-    <motion.div 
+    <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -123,8 +120,9 @@ export default function MortgageForm() {
     >
       {/* Input Section */}
       <div className="w-full lg:w-1/3 bg-white p-6 rounded-2xl shadow-sm border border-border">
-        <h2 className="text-xl font-semibold mb-6">Loan Details</h2>
-        
+        <h2 className="text-xl font-semibold mb-1">Loan Details</h2>
+        <p className="text-sm text-text-muted mb-6 italic">Results change as you change input</p>
+
         <div className="space-y-6">
           {/* Home Price */}
           <div>
@@ -202,23 +200,37 @@ export default function MortgageForm() {
 
           {/* Loan Term */}
           <div>
-            <label className="block text-sm font-medium text-text-primary mb-2">Loan Term</label>
-            <div className="flex gap-2">
-              {[10, 15, 20, 30].map((term) => (
-                <button
-                  key={term}
-                  type="button"
-                  onClick={() => setValue("loanTerm", term)}
-                  className={`flex-1 py-2 rounded-full text-sm font-medium transition-colors ${
-                    values.loanTerm === term
-                      ? "bg-primary text-white"
-                      : "bg-slate-100 text-text-primary hover:bg-slate-200"
-                  }`}
-                >
-                  {term} yr
-                </button>
-              ))}
+            <label className="block text-sm font-medium text-text-primary mb-2">Loan Term (Years)</label>
+            <div className="relative">
+              <Controller
+                name="loanTerm"
+                control={control}
+                render={({ field }) => (
+                  <input
+                    type="number"
+                    className="w-full pl-4 pr-12 py-3 rounded-xl border border-border focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                    {...field}
+                    onChange={(e) => field.onChange(Number(e.target.value))}
+                  />
+                )}
+              />
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-text-muted">yrs</span>
             </div>
+            <Controller
+              name="loanTerm"
+              control={control}
+              render={({ field }) => (
+                <input
+                  type="range"
+                  min="1"
+                  max="50"
+                  step="1"
+                  className="w-full mt-4 accent-primary"
+                  {...field}
+                  onChange={(e) => field.onChange(Number(e.target.value))}
+                />
+              )}
+            />
           </div>
 
           {/* Interest Rate */}
@@ -341,26 +353,19 @@ export default function MortgageForm() {
           </div>
 
           <div className="flex gap-4 pt-4 border-t border-border">
-            <button
-              type="button"
-              onClick={handleSave}
-              className="flex-1 py-3 bg-slate-100 hover:bg-slate-200 text-text-primary font-medium rounded-xl transition-colors"
-            >
-              Save
-            </button>
-            <ShareResultsButton values={values} />
+            <DownloadPDFButton filename="mortgage-calculation.pdf" />
           </div>
         </div>
       </div>
 
       {/* Results Section */}
-      <div className="w-full lg:w-2/3 space-y-8">
+      <div id="calculator-results" className="w-full lg:w-2/3 space-y-8 bg-slate-50 p-4 rounded-2xl">
         {/* Hero Card */}
         <div className="bg-primary text-white p-8 rounded-2xl shadow-lg relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
           <h2 className="text-lg font-medium opacity-90 mb-2">Estimated Monthly Payment</h2>
           <div className="text-5xl font-bold mb-6">{formatCurrency(summary.totalMonthly)}</div>
-          
+
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
             <div>
               <div className="opacity-75">Principal & Interest</div>
@@ -392,7 +397,7 @@ export default function MortgageForm() {
           <ResultSummary summary={summary} values={values} />
         </div>
 
-        <ScenarioComparison 
+        <ScenarioComparison
           currentScenario={{
             name: "Current",
             monthlyPayment: summary.totalMonthly,
@@ -406,7 +411,7 @@ export default function MortgageForm() {
             <h3 className="text-lg font-semibold">Amortization Schedule</h3>
             <ExtraPaymentToggle enabled={showExtraPayment} onToggle={() => setShowExtraPayment(!showExtraPayment)} />
           </div>
-          
+
           {showExtraPayment && (
             <div className="mb-6 p-4 bg-slate-50 rounded-xl border border-border">
               <label className="block text-sm font-medium text-text-primary mb-2">Extra Monthly Payment</label>
@@ -428,7 +433,7 @@ export default function MortgageForm() {
             </div>
           )}
 
-          <AmortizationLineChart 
+          <AmortizationLineChart
             principal={values.homePrice - values.downPayment}
             rate={values.interestRate}
             term={values.loanTerm}
@@ -438,7 +443,7 @@ export default function MortgageForm() {
 
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-border overflow-hidden">
           <h3 className="text-lg font-semibold mb-6">Annual Payment Breakdown</h3>
-          <PaymentBreakdownBar 
+          <PaymentBreakdownBar
             principal={values.homePrice - values.downPayment}
             rate={values.interestRate}
             term={values.loanTerm}
@@ -447,7 +452,7 @@ export default function MortgageForm() {
 
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-border">
           <h3 className="text-lg font-semibold mb-6">Amortization Table</h3>
-          <AmortizationTable 
+          <AmortizationTable
             principal={values.homePrice - values.downPayment}
             rate={values.interestRate}
             term={values.loanTerm}
