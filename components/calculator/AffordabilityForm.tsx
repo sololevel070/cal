@@ -6,8 +6,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { calculateAffordability } from "@/lib/calculations";
 import { formatCurrency } from "@/lib/formatters";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const DonutChart = dynamic(() => import("./DonutChart"), { ssr: false });
+
 import DownloadPDFButton from "./DownloadPDFButton";
+
 
 const schema = z.object({
   annualIncome: z.number().min(10000),
@@ -203,18 +208,30 @@ export default function AffordabilityForm() {
 
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-border">
           <h3 className="text-lg font-semibold mb-6">Monthly Budget Breakdown</h3>
-          <div className="space-y-4">
-            <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
-              <span className="font-medium text-text-primary">Housing (P&I, Taxes, Ins)</span>
-              <span className="font-bold text-primary">{formatCurrency(result.monthlyBudgetBreakdown.housing)}</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <DonutChart
+                data={[
+                  { name: "Housing", value: result.monthlyBudgetBreakdown.housing, color: "#004fc8" },
+                  { name: "Other Debts", value: result.monthlyBudgetBreakdown.debts, color: "#F59E0B" },
+                  { name: "Living Expenses", value: Math.max(0, result.monthlyBudgetBreakdown.remaining), color: "#10ae76" },
+                ]}
+              />
             </div>
-            <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
-              <span className="font-medium text-text-primary">Other Debts</span>
-              <span className="font-bold text-warning">{formatCurrency(result.monthlyBudgetBreakdown.debts)}</span>
-            </div>
-            <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
-              <span className="font-medium text-text-primary">Remaining for Living Expenses</span>
-              <span className="font-bold text-accent">{formatCurrency(result.monthlyBudgetBreakdown.remaining)}</span>
+            <div className="space-y-4">
+              <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
+                <span className="font-medium text-text-primary">Housing (P&I, Taxes, Ins)</span>
+                <span className="font-bold text-primary">{formatCurrency(result.monthlyBudgetBreakdown.housing)}</span>
+              </div>
+
+              <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
+                <span className="font-medium text-text-primary">Other Debts</span>
+                <span className="font-bold text-warning">{formatCurrency(result.monthlyBudgetBreakdown.debts)}</span>
+              </div>
+              <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
+                <span className="font-medium text-text-primary">Remaining for Living Expenses</span>
+                <span className="font-bold text-accent">{formatCurrency(result.monthlyBudgetBreakdown.remaining)}</span>
+              </div>
             </div>
           </div>
         </div>

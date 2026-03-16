@@ -20,55 +20,102 @@ export default function DownloadPDFButton({
 
     const handleDownload = async () => {
         const element = document.getElementById(elementId);
-        if (!element) return;
+        if (!element) {
+            console.error(`[PDF] Element with ID ${elementId} not found`);
+            alert("Error: Results panel not found. Please try again.");
+            return;
+        }
 
-        // Temporarily remove overflow restrictions from all elements inside to avoid capturing scrollbars
-        const scrollElements = element.querySelectorAll('.overflow-x-auto, .overflow-y-auto');
-        const originalStyles: { el: Element, key: string, val: string }[] = [];
+        const originalStyle = element.style.cssText;
 
-        scrollElements.forEach(el => {
-            originalStyles.push({ el, key: 'overflow', val: (el as HTMLElement).style.overflow });
-            (el as HTMLElement).style.overflow = 'visible';
-        });
+        // Inject temporary style to hide scrollbars globally for the capture
+        const styleTag = document.createElement('style');
+        styleTag.innerHTML = `
+            #${elementId} *::-webkit-scrollbar { display: none !important; }
+            #${elementId} * { scrollbar-width: none !important; -ms-overflow-style: none !important; }
+        `;
+        document.head.appendChild(styleTag);
 
         try {
+            console.log(`[PDF] Starting capture for ${elementId}...`);
             setIsDownloading(true);
+
+            // Give a moment for any lazy-loaded charts to settle
+            await new Promise(resolve => setTimeout(resolve, 800));
+
+            // Find all scrollable containers and force them to show full content
+            const scrollContainers = element.querySelectorAll('.overflow-auto, .overflow-x-auto, .overflow-y-auto');
+            const containerStyles: { el: HTMLElement, original: string }[] = [];
+
+            scrollContainers.forEach(container => {
+                const el = container as HTMLElement;
+                containerStyles.push({ el, original: el.style.cssText });
+                el.style.overflow = 'visible';
+                el.style.height = 'auto';
+                el.style.maxHeight = 'none';
+            });
+
+            // Force main element to be fully expanded
+            element.style.height = 'auto';
+            element.style.overflow = 'visible';
+
+            const width = element.offsetWidth;
+            const height = element.scrollHeight;
+
+            console.log(`[PDF] Capturing: ${width}x${height}`);
+
             const imgData = await toPng(element, {
                 cacheBust: true,
-                style: { backgroundColor: '#ffffff' },
-                pixelRatio: 2
+                style: {
+                    backgroundColor: '#f8fafc',
+                    borderRadius: '0',
+                    margin: '0',
+                    padding: '20px',
+                },
+                width: width + 40,
+                height: height + 40,
+                pixelRatio: 1.5,
             });
 
-            // Create a temporary image to get natural dimensions
-            const img = new window.Image();
-            img.src = imgData;
-            await new Promise((resolve) => { img.onload = resolve });
+            console.log("[PDF] Image generated. Creating PDF blob...");
 
-            const pdfWidth = img.naturalWidth;
-            const pdfHeight = img.naturalHeight;
+            const pdfHeight = height + 40;
+            const pdfWidth = width + 40;
 
-            // Generate a single continuous PDF page so tables and charts never get cut off
             const pdf = new jsPDF({
-                orientation: pdfWidth > pdfHeight ? "landscape" : "portrait",
+                orientation: pdfWidth > pdfHeight ? "l" : "p",
                 unit: "px",
-                format: [pdfWidth, pdfHeight]
+                format: [pdfWidth, pdfHeight],
+                hotfixes: ["px_scaling"]
             });
 
-            pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
-            pdf.save(filename);
+            pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+
+            const blob = pdf.output('blob');
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = filename;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            URL.revokeObjectURL(url);
+
+            console.log("[PDF] Download initiated successfully!");
+
+            // Restore scroll container styles
+            containerStyles.forEach(({ el, original }) => {
+                el.style.cssText = original;
+            });
 
         } catch (error: any) {
-            console.error("Error generating PDF:", error);
-            alert(`Failed to generate PDF. Please try again. Error: ${error?.message || "Unknown error"}`);
+            console.error("[PDF] Error:", error);
+            alert(`PDF Generation failed. Error: ${error?.message || "Unknown error"}`);
         } finally {
-            // Restore original styles
-            originalStyles.forEach(({ el, key, val }) => {
-                if (val) {
-                    (el as HTMLElement).style.setProperty(key, val);
-                } else {
-                    (el as HTMLElement).style.removeProperty(key);
-                }
-            });
+            element.style.cssText = originalStyle;
+            if (document.head.contains(styleTag)) {
+                document.head.removeChild(styleTag);
+            }
             setIsDownloading(false);
         }
     };

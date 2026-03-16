@@ -1,16 +1,5 @@
 {
   "headers": {
-    "x-nextjs-stale-time": "300",
-    "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/blog/layout,_N_T_/blog/30-year-vs-15-year-mortgage/layout,_N_T_/blog/30-year-vs-15-year-mortgage/page,_N_T_/blog/30-year-vs-15-year-mortgage"
-  },
-  "segmentPaths": [
-    "/_tree",
-    "/_full",
-    "/blog/30-year-vs-15-year-mortgage/__PAGE__",
-    "/blog/30-year-vs-15-year-mortgage",
-    "/blog",
-    "/_index",
-    "/_head"
-  ]
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/blog/layout,_N_T_/blog/30-year-vs-15-year-mortgage/layout,_N_T_/blog/30-year-vs-15-year-mortgage/page,_N_T_/blog/30-year-vs-15-year-mortgage/"
+  }
 }

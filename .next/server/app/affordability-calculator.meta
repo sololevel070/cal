@@ -1,15 +1,5 @@
 {
   "headers": {
-    "x-nextjs-stale-time": "300",
-    "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/affordability-calculator/layout,_N_T_/affordability-calculator/page,_N_T_/affordability-calculator"
-  },
-  "segmentPaths": [
-    "/_tree",
-    "/_full",
-    "/affordability-calculator/__PAGE__",
-    "/affordability-calculator",
-    "/_index",
-    "/_head"
-  ]
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/affordability-calculator/layout,_N_T_/affordability-calculator/page,_N_T_/affordability-calculator/"
+  }
 }

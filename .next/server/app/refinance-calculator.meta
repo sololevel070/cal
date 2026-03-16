@@ -1,15 +1,5 @@
 {
   "headers": {
-    "x-nextjs-stale-time": "300",
-    "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/refinance-calculator/layout,_N_T_/refinance-calculator/page,_N_T_/refinance-calculator"
-  },
-  "segmentPaths": [
-    "/_tree",
-    "/_full",
-    "/refinance-calculator/__PAGE__",
-    "/refinance-calculator",
-    "/_index",
-    "/_head"
-  ]
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/refinance-calculator/layout,_N_T_/refinance-calculator/page,_N_T_/refinance-calculator/"
+  }
 }

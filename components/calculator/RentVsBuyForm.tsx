@@ -1,13 +1,20 @@
 "use client";
 
+
+
 import { useState, useMemo, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { calculateRentVsBuy } from "@/lib/calculations";
 import { formatCurrency } from "@/lib/formatters";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const DonutChart = dynamic(() => import("./DonutChart"), { ssr: false });
+
 import DownloadPDFButton from "./DownloadPDFButton";
+
 
 const schema = z.object({
   currentRent: z.number().min(100),
@@ -222,16 +229,26 @@ export default function RentVsBuyForm() {
         </div>
 
         <div className="bg-white p-6 rounded-2xl shadow-sm border border-border">
-          <h3 className="text-lg font-semibold mb-6">Financial Breakdown</h3>
-          <p className="text-text-muted mb-6">
-            This calculation assumes standard national averages for property appreciation (3% annually), rent increases (3% annually), property taxes (1.2%), maintenance (1%), and selling costs (6%).
-          </p>
-          <div className="space-y-4">
-            <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
-              <span className="font-medium text-text-primary">Net Difference</span>
-              <span className={`font-bold ${result.isBetterToBuy ? 'text-primary' : 'text-orange-500'}`}>
-                {formatCurrency(Math.abs(result.totalCostOfRenting - result.totalCostOfBuying))}
-              </span>
+          <h3 className="text-lg font-semibold mb-6">Financial Comparison</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+              <DonutChart
+                data={[
+                  { name: "Total Renting", value: result.totalCostOfRenting, color: "#F59E0B" },
+                  { name: "Total Buying", value: result.totalCostOfBuying, color: "#004fc8" },
+                ]}
+              />
+            </div>
+            <div className="space-y-4">
+              <div className="flex justify-between items-center p-4 bg-slate-50 rounded-xl">
+                <span className="font-medium text-text-primary">Net Difference</span>
+                <span className={`font-bold ${result.isBetterToBuy ? 'text-primary' : 'text-orange-500'}`}>
+                  {formatCurrency(Math.abs(result.totalCostOfRenting - result.totalCostOfBuying))}
+                </span>
+              </div>
+              <p className="text-sm text-text-muted mt-4">
+                Buying includes mortgage payments, taxes, maintenance, and projected appreciation. Selling costs are accounted for at year {values.yearsInHome}.
+              </p>
             </div>
           </div>
         </div>

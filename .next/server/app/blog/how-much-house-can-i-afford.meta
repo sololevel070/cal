@@ -1,16 +1,5 @@
 {
   "headers": {
-    "x-nextjs-stale-time": "300",
-    "x-nextjs-prerender": "1",
-    "x-next-cache-tags": "_N_T_/layout,_N_T_/blog/layout,_N_T_/blog/how-much-house-can-i-afford/layout,_N_T_/blog/how-much-house-can-i-afford/page,_N_T_/blog/how-much-house-can-i-afford"
-  },
-  "segmentPaths": [
-    "/_tree",
-    "/_full",
-    "/blog/how-much-house-can-i-afford/__PAGE__",
-    "/blog/how-much-house-can-i-afford",
-    "/blog",
-    "/_index",
-    "/_head"
-  ]
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/blog/layout,_N_T_/blog/how-much-house-can-i-afford/layout,_N_T_/blog/how-much-house-can-i-afford/page,_N_T_/blog/how-much-house-can-i-afford/"
+  }
 }

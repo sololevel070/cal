@@ -1,3 +1,0 @@
-module.exports=[55734,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(2154);a.n(d("[project]/Downloads/cal/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},53830,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(2154);a.n(d("[project]/Downloads/cal/node_modules/next/dist/client/components/builtin/global-error.js"))},19919,a=>{"use strict";a.i(55734);var b=a.i(53830);a.n(b)}];
-
-//# sourceMappingURL=e3a3a_next_dist_client_components_builtin_global-error_d2a22e89.js.map

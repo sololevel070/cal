@@ -3,8 +3,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X } from "lucide-react";
+
+
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

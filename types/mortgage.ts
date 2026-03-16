@@ -33,6 +33,8 @@ export interface RefinanceResult {
   monthlySavings: number;
   breakEvenMonths: number;
   lifetimeSavings: number;
+  currentMonthly: number;
+  newMonthly: number;
 }
 
 export interface ExtraPaymentResult {

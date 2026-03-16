@@ -1,5 +1,7 @@
 "use client";
 
+
+
 import { useState } from "react";
 import { Share2, Check } from "lucide-react";
 
@@ -18,7 +20,7 @@ export default function ShareResultsButton({ values }: Props) {
           params.append(key, values[key].toString());
         }
       });
-      
+
       const url = `${window.location.origin}${window.location.pathname}?${params.toString()}`;
       await navigator.clipboard.writeText(url);
       setCopied(true);

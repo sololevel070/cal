@@ -1,12 +1,15 @@
 "use client";
 
+
+
 import { useState, useMemo, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { calculateMortgageSummary } from "@/lib/calculations";
 import { formatCurrency, formatPercentage } from "@/lib/formatters";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+
 import dynamic from "next/dynamic";
 import DownloadPDFButton from "./DownloadPDFButton";
 
@@ -392,7 +395,12 @@ export default function MortgageForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white p-6 rounded-2xl shadow-sm border border-border">
             <h3 className="text-lg font-semibold mb-4 text-center">Payment Breakdown</h3>
-            <DonutChart summary={summary} homePrice={values.homePrice} downPayment={values.downPayment} />
+            <DonutChart
+              summary={summary}
+              homePrice={values.homePrice}
+              downPayment={values.downPayment}
+              loanTerm={values.loanTerm}
+            />
           </div>
           <ResultSummary summary={summary} values={values} />
         </div>

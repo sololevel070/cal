@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[8375,["/_next/static/chunks/dd962e2c66c6e63a.js","/_next/static/chunks/bf3e5b94902e8f1c.js","/_next/static/chunks/69c8701c247e765c.js"],"ViewportBoundary"]
-3:I[8375,["/_next/static/chunks/dd962e2c66c6e63a.js","/_next/static/chunks/bf3e5b94902e8f1c.js","/_next/static/chunks/69c8701c247e765c.js"],"MetadataBoundary"]
-4:"$Sreact.suspense"
-0:{"buildId":"btFqESVPAk87G-7gGKmrA","rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L2",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"}]]}],["$","div",null,{"hidden":true,"children":["$","$L3",null,{"children":["$","$4",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"ClearNest | Modern Mortgage Calculator"}],["$","meta","1",{"name":"description","content":"Free mortgage calculator with taxes, insurance, PMI, and amortization schedule."}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"loading":null,"isPartial":false}

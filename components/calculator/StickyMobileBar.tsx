@@ -1,7 +1,9 @@
 "use client";
 
+import { Calculator } from "lucide-react";
 import { formatCurrency } from "@/lib/formatters";
 import DownloadPDFButton from "./DownloadPDFButton";
+
 
 interface Props {
   total: number;

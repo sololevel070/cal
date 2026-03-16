@@ -13,15 +13,14 @@ export function calculateMonthlyPayment(
   annualRate: number,
   termYears: number
 ): number {
-  if (principal <= 0 || termYears <= 0) return 0;
-  if (annualRate === 0) return principal / (termYears * 12);
-
-  const monthlyRate = annualRate / 100 / 12;
-  const numberOfPayments = termYears * 12;
-  const factor = Math.pow(1 + monthlyRate, numberOfPayments);
-
-  const payment = (principal * monthlyRate * factor) / (factor - 1);
-  return isNaN(payment) || !isFinite(payment) ? 0 : payment;
+  if (principal <= 0) return 0
+  if (annualRate === 0) return principal / (termYears * 12)
+  const monthlyRate = annualRate / 100 / 12
+  const n = termYears * 12
+  const payment =
+    (principal * (monthlyRate * Math.pow(1 + monthlyRate, n))) /
+    (Math.pow(1 + monthlyRate, n) - 1)
+  return isFinite(payment) ? payment : 0
 }
 
 export function calculateMortgageSummary(
@@ -36,10 +35,10 @@ export function calculateMortgageSummary(
 ): MortgageSummary {
   const principal = Math.max(0, homePrice - downPayment);
   const emi = calculateMonthlyPayment(principal, rate, term);
-  
+
   const monthlyTax = tax / 12;
   const monthlyInsurance = insurance / 12;
-  
+
   // PMI applies if down payment is less than 20%
   const downPaymentPercent = homePrice > 0 ? (downPayment / homePrice) * 100 : 0;
   const monthlyPMI = downPaymentPercent < 20 ? (principal * (pmiRate / 100)) / 12 : 0;
@@ -77,7 +76,7 @@ export function generateAmortizationSchedule(
 
   const monthlyRate = annualRate / 100 / 12;
   const emi = calculateMonthlyPayment(principal, annualRate, termYears);
-  
+
   let balance = principal;
   const schedule: AmortizationRow[] = [];
   const startYear = new Date().getFullYear();
@@ -123,19 +122,19 @@ export function calculateAffordability(
   term: number
 ): AffordabilityResult {
   const monthlyIncome = income / 12;
-  
+
   // 28% front-end DTI rule
   const maxHousingPayment28 = monthlyIncome * 0.28;
-  
+
   // 43% back-end DTI rule
   const maxHousingPayment43 = (monthlyIncome * 0.43) - debts;
-  
+
   const maxMonthlyPayment = Math.min(maxHousingPayment28, maxHousingPayment43);
-  
+
   // Reverse calculate loan amount from max monthly payment
   const monthlyRate = rate / 100 / 12;
   const numberOfPayments = term * 12;
-  
+
   let maxLoanAmount = 0;
   if (monthlyRate > 0) {
     const factor = Math.pow(1 + monthlyRate, numberOfPayments);
@@ -165,10 +164,10 @@ export function calculateRefinanceSavings(
 ): RefinanceResult {
   const currentMonthly = calculateMonthlyPayment(currentBalance, currentRate, currentRemainingTerm / 12);
   const newMonthly = calculateMonthlyPayment(currentBalance + closingCosts, newRate, newTerm);
-  
+
   const monthlySavings = currentMonthly - newMonthly;
   const breakEvenMonths = monthlySavings > 0 ? closingCosts / monthlySavings : Infinity;
-  
+
   const currentTotalRemaining = currentMonthly * currentRemainingTerm;
   const newTotalCost = newMonthly * (newTerm * 12);
   const lifetimeSavings = currentTotalRemaining - newTotalCost;
@@ -177,6 +176,8 @@ export function calculateRefinanceSavings(
     monthlySavings: Math.max(0, monthlySavings),
     breakEvenMonths: isFinite(breakEvenMonths) ? breakEvenMonths : 0,
     lifetimeSavings,
+    currentMonthly,
+    newMonthly,
   };
 }
 
@@ -193,7 +194,7 @@ export function calculateExtraPaymentSavings(
   const acceleratedInterest = acceleratedSchedule.reduce((sum, row) => sum + row.interest, 0);
 
   const monthsSaved = standardSchedule.length - acceleratedSchedule.length;
-  
+
   const today = new Date();
   const newPayoffDate = new Date(today.getFullYear(), today.getMonth() + acceleratedSchedule.length, today.getDate()).toLocaleDateString("en-US", { month: "long", year: "numeric" });
 
@@ -229,11 +230,11 @@ export function calculateRentVsBuy(
   // Buying costs
   const loanAmount = homePrice - downPayment;
   const monthlyMortgage = calculateMonthlyPayment(loanAmount, interestRate, loanTerm);
-  
+
   const propertyTaxRate = 0.012; // 1.2% annual
   const maintenanceRate = 0.01; // 1% annual
   const homeInsuranceRate = 0.005; // 0.5% annual
-  
+
   let totalCostOfBuying = downPayment; // Initial cost
   let currentHomeValue = homePrice;
   let remainingBalance = loanAmount;
@@ -247,10 +248,10 @@ export function calculateRentVsBuy(
       remainingBalance -= principal;
       totalCostOfBuying += interest; // Only interest is a "cost", principal is equity
     }
-    
+
     // Taxes, insurance, maintenance
     totalCostOfBuying += currentHomeValue * (propertyTaxRate + maintenanceRate + homeInsuranceRate);
-    
+
     // Appreciation
     currentHomeValue *= 1.03; // 3% annual appreciation
   }
@@ -264,28 +265,28 @@ export function calculateRentVsBuy(
   // Total Cash Out = Down Payment + Total Mortgage Payments + Total Taxes + Total Maintenance + Total Insurance + Selling Costs
   // Equity at Sale = Final Home Value - Remaining Balance
   // Net Cost = Total Cash Out - Equity at Sale
-  
+
   // Let's recalculate Net Cost of Buying
   let totalCashOut = downPayment;
   let homeValue = homePrice;
   let balance = loanAmount;
-  
+
   for (let year = 1; year <= yearsInHome; year++) {
     totalCashOut += monthlyMortgage * 12;
     totalCashOut += homeValue * (propertyTaxRate + maintenanceRate + homeInsuranceRate);
-    
+
     for (let m = 0; m < 12; m++) {
       const interest = balance * monthlyRate;
       const principal = monthlyMortgage - interest;
       balance -= principal;
     }
-    
+
     homeValue *= 1.03;
   }
-  
+
   const finalSellingCosts = homeValue * 0.06;
   totalCashOut += finalSellingCosts;
-  
+
   const equityAtSale = homeValue - balance;
   const netCostOfBuying = totalCashOut - equityAtSale;
 
