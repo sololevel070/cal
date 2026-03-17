@@ -26,7 +26,7 @@ export default function AboutPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SchemaMarkup schema={schema} />
       <BreadcrumbSchema items={breadcrumbs} />
-      
+
       <div className="mb-12 text-center">
         <h1 className="text-4xl font-bold text-text-primary mb-4">About ClearNest</h1>
         <p className="text-xl text-text-muted max-w-2xl mx-auto">
@@ -69,7 +69,7 @@ export default function AboutPage() {
           Have a question, suggestion, or found a bug? We'd love to hear from you.
         </p>
         <p>
-          Email us at: <a href="mailto:hello@clearnest.app" className="text-primary hover:underline">hello@clearnest.app</a>
+          Email us at: <a href="mailto:sololevel0700@gmail.com" className="text-primary hover:underline">sololevel0700@gmail.com</a>
         </p>
       </div>
     </div>
