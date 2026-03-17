@@ -72,6 +72,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  other: {
+    'google-adsense-account': 'ca-pub-1766401022939186',
+  },
 }
 
 export const viewport: Viewport = {
