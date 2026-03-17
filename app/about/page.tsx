@@ -5,7 +5,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "About Us | ClearNest",
   description: "Learn about ClearNest's mission to provide transparent, accurate, and easy-to-use mortgage tools for homebuyers.",
-  alternates: { canonical: "https://clearnest.app/about" },
+  alternates: { canonical: "https://clearnestcalculator.site/about" },
 };
 
 export default function AboutPage() {
@@ -14,12 +14,12 @@ export default function AboutPage() {
     "@type": "AboutPage",
     "name": "About ClearNest",
     "description": "Learn about ClearNest's mission to provide transparent, accurate, and easy-to-use mortgage tools for homebuyers.",
-    "url": "https://clearnest.app/about"
+    "url": "https://clearnestcalculator.site/about"
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "About Us", url: "https://clearnest.app/about" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "About Us", url: "https://clearnestcalculator.site/about" }
   ];
 
   return (

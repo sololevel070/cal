@@ -6,7 +6,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "FHA vs Conventional Loan | ClearNest",
   description: "Compare FHA and conventional mortgages to find the best fit for your credit score and down payment.",
-  alternates: { canonical: "https://clearnest.app/blog/fha-vs-conventional-loan" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/fha-vs-conventional-loan" },
 };
 
 export default function BlogPost() {
@@ -21,9 +21,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Blog", url: "https://clearnest.app/blog" },
-    { name: "FHA vs Conventional Loan", url: "https://clearnest.app/blog/fha-vs-conventional-loan" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
+    { name: "FHA vs Conventional Loan", url: "https://clearnestcalculator.site/blog/fha-vs-conventional-loan" }
   ];
 
   return (

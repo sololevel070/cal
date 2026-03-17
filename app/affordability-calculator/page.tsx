@@ -7,7 +7,7 @@ import InternalLinks from "@/components/ui/InternalLinks";
 export const metadata: Metadata = {
   title: "How Much House Can I Afford? Affordability Calculator",
   description: "Find out how much house you can afford based on your income, debts, and down payment. Calculate your maximum home price and loan limit today.",
-  alternates: { canonical: "https://clearnest.app/affordability-calculator" },
+  alternates: { canonical: "https://clearnestcalculator.site/affordability-calculator" },
 };
 
 export default function AffordabilityCalculatorPage() {
@@ -18,12 +18,12 @@ export default function AffordabilityCalculatorPage() {
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "description": "Calculate how much house you can afford based on your income, debts, and down payment.",
-    "url": "https://clearnest.app/affordability-calculator"
+    "url": "https://clearnestcalculator.site/affordability-calculator"
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Affordability Calculator", url: "https://clearnest.app/affordability-calculator" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Affordability Calculator", url: "https://clearnestcalculator.site/affordability-calculator" }
   ];
 
   return (

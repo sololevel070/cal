@@ -9,6 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://clearnest.app/sitemap.xml',
+    sitemap: 'https://clearnestcalculator.site/sitemap.xml',
   };
 }
+

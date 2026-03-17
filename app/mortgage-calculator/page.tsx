@@ -7,11 +7,11 @@ import InternalLinks from "@/components/ui/InternalLinks";
 export const metadata: Metadata = {
   title: "Mortgage Calculator: Estimate Payment with Taxes & PMI",
   description: "Free mortgage calculator with taxes, insurance, and PMI. Instantly calculate your 30-year or 15-year monthly payment with an amortization schedule.",
-  alternates: { canonical: "https://clearnest.app/mortgage-calculator" },
+  alternates: { canonical: "https://clearnestcalculator.site/mortgage-calculator" },
   openGraph: {
     title: "Free Mortgage Calculator | ClearNest",
     description: "Calculate monthly mortgage payments instantly.",
-    url: "https://clearnest.app/mortgage-calculator",
+    url: "https://clearnestcalculator.site/mortgage-calculator",
     siteName: "ClearNest",
     locale: "en_US",
     type: "website"
@@ -28,12 +28,12 @@ export default function MortgageCalculatorPage() {
     "description": "Free US mortgage calculator with amortization schedule, taxes, insurance, and PMI",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "featureList": "Monthly payment, amortization table, extra payments, charts, share results",
-    "url": "https://clearnest.app/mortgage-calculator"
+    "url": "https://clearnestcalculator.site/mortgage-calculator"
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Mortgage Calculator", url: "https://clearnest.app/mortgage-calculator" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Mortgage Calculator", url: "https://clearnestcalculator.site/mortgage-calculator" }
   ];
 
   return (

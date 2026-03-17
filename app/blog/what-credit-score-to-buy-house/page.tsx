@@ -6,7 +6,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "What Credit Score Do You Need to Buy a House? | ClearNest",
   description: "Find out the minimum credit score requirements for different types of home loans and how to improve yours.",
-  alternates: { canonical: "https://clearnest.app/blog/what-credit-score-to-buy-house" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/what-credit-score-to-buy-house" },
 };
 
 export default function BlogPost() {
@@ -21,9 +21,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Blog", url: "https://clearnest.app/blog" },
-    { name: "What Credit Score Do You Need", url: "https://clearnest.app/blog/what-credit-score-to-buy-house" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
+    { name: "What Credit Score Do You Need", url: "https://clearnestcalculator.site/blog/what-credit-score-to-buy-house" }
   ];
 
   return (

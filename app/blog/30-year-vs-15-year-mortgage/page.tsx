@@ -6,7 +6,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "30-Year vs 15-Year Mortgage | ClearNest",
   description: "Decide between a 15-year and 30-year mortgage by comparing monthly payments and total interest costs.",
-  alternates: { canonical: "https://clearnest.app/blog/30-year-vs-15-year-mortgage" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/30-year-vs-15-year-mortgage" },
 };
 
 export default function BlogPost() {
@@ -21,9 +21,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Blog", url: "https://clearnest.app/blog" },
-    { name: "30-Year vs 15-Year Mortgage", url: "https://clearnest.app/blog/30-year-vs-15-year-mortgage" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
+    { name: "30-Year vs 15-Year Mortgage", url: "https://clearnestcalculator.site/blog/30-year-vs-15-year-mortgage" }
   ];
 
   return (

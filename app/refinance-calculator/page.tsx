@@ -7,7 +7,7 @@ import InternalLinks from "@/components/ui/InternalLinks";
 export const metadata: Metadata = {
   title: "Mortgage Refinance Calculator: Savings & Break-Even",
   description: "Calculate your mortgage refinance savings instantly. See your potential monthly savings, total interest saved, and break-even point on a new loan.",
-  alternates: { canonical: "https://clearnest.app/refinance-calculator" },
+  alternates: { canonical: "https://clearnestcalculator.site/refinance-calculator" },
 };
 
 export default function RefinanceCalculatorPage() {
@@ -18,12 +18,12 @@ export default function RefinanceCalculatorPage() {
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "description": "Calculate how much you can save by refinancing your mortgage.",
-    "url": "https://clearnest.app/refinance-calculator"
+    "url": "https://clearnestcalculator.site/refinance-calculator"
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Refinance Calculator", url: "https://clearnest.app/refinance-calculator" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Refinance Calculator", url: "https://clearnestcalculator.site/refinance-calculator" }
   ];
 
   return (

@@ -7,7 +7,7 @@ import InternalLinks from "@/components/ui/InternalLinks";
 export const metadata: Metadata = {
   title: "Rent vs Buy Home Calculator: Is Buying Better Than Renting?",
   description: "Compare the total cost of renting versus buying a home. Use our rent vs buy calculator to see which path builds more wealth over the next 10 years.",
-  alternates: { canonical: "https://clearnest.app/rent-vs-buy-calculator" },
+  alternates: { canonical: "https://clearnestcalculator.site/rent-vs-buy-calculator" },
 };
 
 export default function RentVsBuyCalculatorPage() {
@@ -18,12 +18,12 @@ export default function RentVsBuyCalculatorPage() {
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "description": "Compare renting vs buying a home to find the most cost-effective option over time.",
-    "url": "https://clearnest.app/rent-vs-buy-calculator"
+    "url": "https://clearnestcalculator.site/rent-vs-buy-calculator"
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Rent vs Buy Calculator", url: "https://clearnest.app/rent-vs-buy-calculator" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Rent vs Buy Calculator", url: "https://clearnestcalculator.site/rent-vs-buy-calculator" }
   ];
 
   return (

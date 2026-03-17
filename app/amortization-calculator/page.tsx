@@ -7,7 +7,7 @@ import InternalLinks from "@/components/ui/InternalLinks";
 export const metadata: Metadata = {
   title: "Mortgage Amortization Calculator with Extra Payments",
   description: "Generate a complete mortgage amortization schedule. See how extra payments can accelerate your payoff date and save you thousands in interest.",
-  alternates: { canonical: "https://clearnest.app/amortization-calculator" },
+  alternates: { canonical: "https://clearnestcalculator.site/amortization-calculator" },
 };
 
 export default function AmortizationCalculatorPage() {
@@ -18,12 +18,12 @@ export default function AmortizationCalculatorPage() {
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "description": "Calculate your mortgage amortization schedule and see how extra payments can save you money.",
-    "url": "https://clearnest.app/amortization-calculator"
+    "url": "https://clearnestcalculator.site/amortization-calculator"
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Amortization Calculator", url: "https://clearnest.app/amortization-calculator" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Amortization Calculator", url: "https://clearnestcalculator.site/amortization-calculator" }
   ];
 
   return (

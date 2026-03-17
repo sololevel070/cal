@@ -6,7 +6,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "How Much House Can I Afford? | ClearNest",
   description: "Learn how to calculate your homebuying budget using the 28/43 rule and understand what lenders look for when approving your mortgage.",
-  alternates: { canonical: "https://clearnest.app/blog/how-much-house-can-i-afford" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/how-much-house-can-i-afford" },
 };
 
 export default function BlogPost() {
@@ -21,9 +21,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Blog", url: "https://clearnest.app/blog" },
-    { name: "How Much House Can I Afford?", url: "https://clearnest.app/blog/how-much-house-can-i-afford" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
+    { name: "How Much House Can I Afford?", url: "https://clearnestcalculator.site/blog/how-much-house-can-i-afford" }
   ];
 
   return (

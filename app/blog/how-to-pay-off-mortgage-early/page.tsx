@@ -6,7 +6,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "How to Pay Off Your Mortgage Early | ClearNest",
   description: "Discover proven strategies to pay off your mortgage years ahead of schedule and save thousands in interest.",
-  alternates: { canonical: "https://clearnest.app/blog/how-to-pay-off-mortgage-early" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/how-to-pay-off-mortgage-early" },
 };
 
 export default function BlogPost() {
@@ -21,9 +21,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Blog", url: "https://clearnest.app/blog" },
-    { name: "How to Pay Off Your Mortgage Early", url: "https://clearnest.app/blog/how-to-pay-off-mortgage-early" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
+    { name: "How to Pay Off Your Mortgage Early", url: "https://clearnestcalculator.site/blog/how-to-pay-off-mortgage-early" }
   ];
 
   return (

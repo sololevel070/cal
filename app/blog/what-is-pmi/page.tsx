@@ -6,7 +6,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "What is PMI (Private Mortgage Insurance)? | ClearNest",
   description: "Understand what PMI is, how much it costs, and how you can avoid paying it or get rid of it early.",
-  alternates: { canonical: "https://clearnest.app/blog/what-is-pmi" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/what-is-pmi" },
 };
 
 export default function BlogPost() {
@@ -21,9 +21,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Blog", url: "https://clearnest.app/blog" },
-    { name: "What is PMI", url: "https://clearnest.app/blog/what-is-pmi" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
+    { name: "What is PMI", url: "https://clearnestcalculator.site/blog/what-is-pmi" }
   ];
 
   return (

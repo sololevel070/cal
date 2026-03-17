@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://clearnest.app';
+  const baseUrl = 'https://clearnestcalculator.site';
 
   return [
     {
@@ -98,3 +98,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 }
+

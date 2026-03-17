@@ -6,7 +6,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "Mortgage & Homebuying Blog | ClearNest",
   description: "Learn everything you need to know about mortgages, homebuying, and personal finance.",
-  alternates: { canonical: "https://clearnest.app/blog" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog" },
 };
 
 const posts = [
@@ -53,12 +53,12 @@ export default function BlogPage() {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "ClearNest Mortgage Blog",
-    "url": "https://clearnest.app/blog"
+    "url": "https://clearnestcalculator.site/blog"
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnest.app" },
-    { name: "Blog", url: "https://clearnest.app/blog" }
+    { name: "Home", url: "https://clearnestcalculator.site" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog" }
   ];
 
   return (
