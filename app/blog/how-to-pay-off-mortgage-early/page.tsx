@@ -30,7 +30,7 @@ export default function BlogPost() {
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SchemaMarkup schema={schema} />
       <BreadcrumbSchema items={breadcrumbs} />
-      
+
       <div className="mb-8 border-b border-border pb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4 leading-tight">
           How to Pay Off Your Mortgage Early
@@ -43,6 +43,17 @@ export default function BlogPost() {
       </div>
 
       <div className="prose prose-lg max-w-none text-text-primary">
+        <figure className="mb-10 overflow-hidden rounded-2xl shadow-lg border border-border">
+          <img
+            src="https://images.unsplash.com/photo-1554224155-1696413575b8?auto=format&fit=crop&q=80&w=1200&h=630"
+            alt="Person showing home keys and stack of coins"
+            className="w-full h-auto object-cover"
+          />
+          <figcaption className="p-4 bg-slate-50 text-sm text-text-muted italic border-t border-border text-center">
+            Paying off your principal faster leads to massive long-term savings.
+          </figcaption>
+        </figure>
+
         <p>
           Paying off your mortgage early is a common financial goal. Not only does it free up a significant portion of your monthly income, but it also saves you tens of thousands of dollars in interest over the life of the loan. Here are several proven strategies to help you achieve a mortgage-free life sooner.
         </p>

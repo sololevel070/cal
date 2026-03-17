@@ -30,7 +30,7 @@ export default function BlogPost() {
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SchemaMarkup schema={schema} />
       <BreadcrumbSchema items={breadcrumbs} />
-      
+
       <div className="mb-8 border-b border-border pb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4 leading-tight">
           30-Year vs 15-Year Mortgage: Pros and Cons
@@ -43,6 +43,17 @@ export default function BlogPost() {
       </div>
 
       <div className="prose prose-lg max-w-none text-text-primary">
+        <figure className="mb-10 overflow-hidden rounded-2xl shadow-lg border border-border">
+          <img
+            src="https://images.unsplash.com/photo-1518481612222-68bbe828eba1?auto=format&fit=crop&q=80&w=1200&h=630"
+            alt="Clock and calendar on a desk"
+            className="w-full h-auto object-cover"
+          />
+          <figcaption className="p-4 bg-slate-50 text-sm text-text-muted italic border-t border-border text-center">
+            The loan term significantly impacts your monthly payment and total interest.
+          </figcaption>
+        </figure>
+
         <p>
           When choosing a mortgage, one of the most significant decisions you'll make is the loan term. The two most common options are the 30-year fixed-rate mortgage and the 15-year fixed-rate mortgage. Each has its own set of advantages and disadvantages, and the best choice depends entirely on your financial situation and goals.
         </p>
@@ -51,7 +62,7 @@ export default function BlogPost() {
         <p>
           The 30-year fixed-rate mortgage is the most popular choice among homebuyers. Its primary appeal is that it spreads the cost of the home over three decades, resulting in significantly lower monthly payments compared to shorter terms.
         </p>
-        
+
         <h3 className="text-2xl font-semibold mt-8 mb-3">Pros:</h3>
         <ul className="list-disc pl-6 mb-6">
           <li><strong>Lower Monthly Payments:</strong> Because the principal is spread over 360 months, your monthly obligation is much lower, making it easier to qualify for the loan and leaving more room in your budget for other expenses.</li>

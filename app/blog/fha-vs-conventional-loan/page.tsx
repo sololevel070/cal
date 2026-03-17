@@ -30,7 +30,7 @@ export default function BlogPost() {
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SchemaMarkup schema={schema} />
       <BreadcrumbSchema items={breadcrumbs} />
-      
+
       <div className="mb-8 border-b border-border pb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4 leading-tight">
           FHA vs Conventional Loan: Which is Right for You?
@@ -43,6 +43,17 @@ export default function BlogPost() {
       </div>
 
       <div className="prose prose-lg max-w-none text-text-primary">
+        <figure className="mb-10 overflow-hidden rounded-2xl shadow-lg border border-border">
+          <img
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1200&h=630"
+            alt="Business document and a house model"
+            className="w-full h-auto object-cover"
+          />
+          <figcaption className="p-4 bg-slate-50 text-sm text-text-muted italic border-t border-border text-center">
+            Choosing the right loan depends on your financial profile.
+          </figcaption>
+        </figure>
+
         <p>
           Choosing the right mortgage is a critical step in the homebuying process. Two of the most popular options are FHA loans and conventional loans. While both can help you buy a home, they have different requirements, costs, and benefits.
         </p>
@@ -58,7 +69,7 @@ export default function BlogPost() {
         </p>
 
         <h2 className="text-3xl font-semibold mt-10 mb-4">Key Differences</h2>
-        
+
         <h3 className="text-2xl font-semibold mt-8 mb-3">Credit Score Requirements</h3>
         <ul className="list-disc pl-6 mb-6">
           <li><strong>FHA:</strong> You can qualify with a credit score as low as 500 (with a 10% down payment) or 580 (with a 3.5% down payment).</li>

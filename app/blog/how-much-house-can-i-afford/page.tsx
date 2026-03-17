@@ -30,7 +30,7 @@ export default function BlogPost() {
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SchemaMarkup schema={schema} />
       <BreadcrumbSchema items={breadcrumbs} />
-      
+
       <div className="mb-8 border-b border-border pb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4 leading-tight">
           How Much House Can I Afford?
@@ -43,6 +43,17 @@ export default function BlogPost() {
       </div>
 
       <div className="prose prose-lg max-w-none text-text-primary">
+        <figure className="mb-10 overflow-hidden rounded-2xl shadow-lg border border-border">
+          <img
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=1200&h=630"
+            alt="New house keys on a wooden table"
+            className="w-full h-auto object-cover"
+          />
+          <figcaption className="p-4 bg-slate-50 text-sm text-text-muted italic border-t border-border text-center">
+            Determining your budget is the first step toward homeownership.
+          </figcaption>
+        </figure>
+
         <div className="bg-blue-50 border-l-4 border-primary p-6 rounded-r-xl mb-8">
           <h2 className="text-xl font-bold text-primary mt-0 mb-2">Quick Answer</h2>
           <p className="m-0 text-text-primary">

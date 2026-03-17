@@ -30,7 +30,7 @@ export default function BlogPost() {
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SchemaMarkup schema={schema} />
       <BreadcrumbSchema items={breadcrumbs} />
-      
+
       <div className="mb-8 border-b border-border pb-8">
         <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-4 leading-tight">
           What is PMI (Private Mortgage Insurance)?
@@ -43,6 +43,17 @@ export default function BlogPost() {
       </div>
 
       <div className="prose prose-lg max-w-none text-text-primary">
+        <figure className="mb-10 overflow-hidden rounded-2xl shadow-lg border border-border">
+          <img
+            src="https://images.unsplash.com/photo-1450101496173-eb415183ccbc?auto=format&fit=crop&q=80&w=1200&h=630"
+            alt="House model and calculator on documents"
+            className="w-full h-auto object-cover"
+          />
+          <figcaption className="p-4 bg-slate-50 text-sm text-text-muted italic border-t border-border text-center">
+            Understanding PMI helps you plan your homebuying timeline.
+          </figcaption>
+        </figure>
+
         <p>
           If you're buying a home with a conventional loan and putting down less than 20%, you'll likely have to pay for Private Mortgage Insurance (PMI). But what exactly is it, and how does it affect your monthly payments?
         </p>
@@ -66,7 +77,7 @@ export default function BlogPost() {
         </p>
 
         <h2 className="text-3xl font-semibold mt-10 mb-4">How to Avoid or Remove PMI</h2>
-        
+
         <h3 className="text-2xl font-semibold mt-8 mb-3">1. Put Down 20%</h3>
         <p>
           The most straightforward way to avoid PMI entirely is to make a down payment of at least 20% of the home's purchase price.
