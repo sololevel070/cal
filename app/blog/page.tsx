@@ -11,6 +11,24 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: "How to Get Preapproved for a Mortgage in 2026",
+    slug: "how-to-get-preapproved-for-mortgage",
+    excerpt: "Learn the exact steps to get preapproved for a mortgage in 2026. Discover the requirements, how your credit score affects the process, and what documents you need.",
+    date: "March 20, 2026"
+  },
+  {
+    title: "What is a Reverse Mortgage? 2026 Limits & Rates",
+    slug: "what-is-a-reverse-mortgage",
+    excerpt: "Learn what a reverse mortgage is, the 2026 HECM loan limits, interest rates, and how you can turn your home equity into tax-free cash in retirement.",
+    date: "March 20, 2026"
+  },
+  {
+    title: "How to Find a Mortgage Broker in 2026",
+    slug: "how-to-find-a-mortgage-broker",
+    excerpt: "Looking for a mortgage broker near you? Learn the steps to find, interview, and compare brokers to secure the best rates.",
+    date: "March 20, 2026"
+  },
+  {
     title: "How Much House Can I Afford?",
     slug: "how-much-house-can-i-afford",
     excerpt: "Learn how to calculate your homebuying budget using the 28/43 rule and understand what lenders look for.",
@@ -65,7 +83,7 @@ export default function BlogPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <SchemaMarkup schema={schema} />
       <BreadcrumbSchema items={breadcrumbs} />
-      
+
       <div className="mb-12 text-center">
         <h1 className="text-4xl font-bold text-text-primary mb-4">Mortgage & Homebuying Insights</h1>
         <p className="text-xl text-text-muted max-w-2xl mx-auto">
