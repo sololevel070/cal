@@ -11,6 +11,24 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    title: "How to Calculate Mortgage Payments (And Hidden Costs)",
+    slug: "how-to-calculate-mortgage-payments",
+    excerpt: "Learn how to calculate your true mortgage payment. Understand principal, interest, taxes, insurance, and the formulas used to estimate your monthly cost.",
+    date: "March 20, 2026"
+  },
+  {
+    title: "Mortgage Interest Deduction 2026: Rules & Limits",
+    slug: "mortgage-interest-deduction",
+    excerpt: "Learn about the permanent 2026 mortgage interest deduction rules. Find out how much interest you can deduct, PMI deductibility, and whether you should itemize.",
+    date: "March 20, 2026"
+  },
+  {
+    title: "VA Mortgage Rates 2026: Limits, Funding Fees & Guidelines",
+    slug: "va-mortgage-rates",
+    excerpt: "Your complete guide to VA mortgage rates in 2026. Discover today's rates, zero-down payment options, funding fee changes, and exact VA loan limits.",
+    date: "March 20, 2026"
+  },
+  {
     title: "How to Get Preapproved for a Mortgage in 2026",
     slug: "how-to-get-preapproved-for-mortgage",
     excerpt: "Learn the exact steps to get preapproved for a mortgage in 2026. Discover the requirements, how your credit score affects the process, and what documents you need.",
