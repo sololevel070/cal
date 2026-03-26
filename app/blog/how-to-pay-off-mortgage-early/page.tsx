@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import InternalLinks from "@/components/ui/InternalLinks";
 
 export const metadata: Metadata = {
   title: "How to Pay Off Your Mortgage Early | ClearNest",
   description: "Discover proven strategies to pay off your mortgage years ahead of schedule and save thousands in interest.",
-  alternates: { canonical: "https://clearnestcalculator.site/blog/how-to-pay-off-mortgage-early" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/how-to-pay-off-mortgage-early/" },
 };
 
 export default function BlogPost() {
@@ -21,9 +22,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
-    { name: "How to Pay Off Your Mortgage Early", url: "https://clearnestcalculator.site/blog/how-to-pay-off-mortgage-early" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog/" },
+    { name: "How to Pay Off Your Mortgage Early", url: "https://clearnestcalculator.site/blog/how-to-pay-off-mortgage-early/" }
   ];
 
   return (
@@ -86,7 +87,7 @@ export default function BlogPost() {
         <div className="bg-slate-50 p-8 rounded-2xl border border-border my-10 text-center">
           <h3 className="text-2xl font-bold mb-4">See the Impact of Extra Payments</h3>
           <p className="mb-6 text-text-muted">Use our mortgage calculator to see exactly how much time and money you can save by adding extra payments.</p>
-          <Link href="/mortgage-calculator" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+          <Link href="/mortgage-calculator/" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
             Calculate Extra Payments
           </Link>
         </div>

@@ -7,7 +7,7 @@ import InternalLinks from "@/components/ui/InternalLinks";
 export const metadata: Metadata = {
   title: "Mortgage Amortization Calculator with Extra Payments",
   description: "Generate a complete mortgage amortization schedule. See how extra payments can accelerate your payoff date and save you thousands in interest.",
-  alternates: { canonical: "https://clearnestcalculator.site/amortization-calculator" },
+  alternates: { canonical: "https://clearnestcalculator.site/amortization-calculator/" },
 };
 
 export default function AmortizationCalculatorPage() {
@@ -22,8 +22,8 @@ export default function AmortizationCalculatorPage() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Amortization Calculator", url: "https://clearnestcalculator.site/amortization-calculator" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Amortization Calculator", url: "https://clearnestcalculator.site/amortization-calculator/" }
   ];
 
   return (
@@ -82,12 +82,12 @@ export default function AmortizationCalculatorPage() {
 
       <InternalLinks
         calculators={[
-          { name: "Mortgage Calculator", href: "/mortgage-calculator" },
-          { name: "Refinance Calculator", href: "/refinance-calculator" }
+          { name: "Mortgage Calculator", href: "/mortgage-calculator/" },
+          { name: "Refinance Calculator", href: "/refinance-calculator/" }
         ]}
         articles={[
-          { name: "How to Pay Off Your Mortgage Early", href: "/blog/how-to-pay-off-mortgage-early" },
-          { name: "30-Year vs. 15-Year Mortgage", href: "/blog/30-year-vs-15-year-mortgage" }
+          { name: "How to Pay Off Your Mortgage Early", href: "/blog/how-to-pay-off-mortgage-early/" },
+          { name: "30-Year vs. 15-Year Mortgage", href: "/blog/30-year-vs-15-year-mortgage/" }
         ]}
       />
     </div>

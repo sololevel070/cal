@@ -7,7 +7,7 @@ import InternalLinks from "@/components/ui/InternalLinks";
 export const metadata: Metadata = {
   title: "Mortgage Refinance Calculator: Savings & Break-Even",
   description: "Calculate your mortgage refinance savings instantly. See your potential monthly savings, total interest saved, and break-even point on a new loan.",
-  alternates: { canonical: "https://clearnestcalculator.site/refinance-calculator" },
+  alternates: { canonical: "https://clearnestcalculator.site/refinance-calculator/" },
 };
 
 export default function RefinanceCalculatorPage() {
@@ -22,8 +22,8 @@ export default function RefinanceCalculatorPage() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Refinance Calculator", url: "https://clearnestcalculator.site/refinance-calculator" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Refinance Calculator", url: "https://clearnestcalculator.site/refinance-calculator/" }
   ];
 
   return (
@@ -85,11 +85,11 @@ export default function RefinanceCalculatorPage() {
 
       <InternalLinks
         calculators={[
-          { name: "Amortization Calculator", href: "/amortization-calculator" },
-          { name: "Mortgage Calculator", href: "/mortgage-calculator" }
+          { name: "Amortization Calculator", href: "/amortization-calculator/" },
+          { name: "Mortgage Calculator", href: "/mortgage-calculator/" }
         ]}
         articles={[
-          { name: "How to Pay Off Your Mortgage Early", href: "/blog/how-to-pay-off-mortgage-early" }
+          { name: "How to Pay Off Your Mortgage Early", href: "/blog/how-to-pay-off-mortgage-early/" }
         ]}
       />
     </div>

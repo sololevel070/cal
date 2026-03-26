@@ -15,12 +15,12 @@ export default function Navbar() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const navLinks = [
-    { name: "Mortgage Calc", href: "/mortgage-calculator" },
-    { name: "Affordability", href: "/affordability-calculator" },
-    { name: "Refinance", href: "/refinance-calculator" },
-    { name: "Amortization", href: "/amortization-calculator" },
-    { name: "Rent vs Buy", href: "/rent-vs-buy-calculator" },
-    { name: "Blog", href: "/blog" },
+    { name: "Mortgage Calc", href: "/mortgage-calculator/" },
+    { name: "Affordability", href: "/affordability-calculator/" },
+    { name: "Refinance", href: "/refinance-calculator/" },
+    { name: "Amortization", href: "/amortization-calculator/" },
+    { name: "Rent vs Buy", href: "/rent-vs-buy-calculator/" },
+    { name: "Blog", href: "/blog/" },
   ];
 
   return (
@@ -47,7 +47,7 @@ export default function Navbar() {
             ))}
           </div>
           <div className="hidden lg:flex items-center">
-            <Link href="/mortgage-calculator" className="bg-primary text-white px-4 py-2 rounded-full font-medium hover:brightness-110 transition-all text-sm lg:text-base">
+            <Link href="/mortgage-calculator/" className="bg-primary text-white px-4 py-2 rounded-full font-medium hover:brightness-110 transition-all text-sm lg:text-base">
               Get Started Free
             </Link>
           </div>
@@ -80,7 +80,7 @@ export default function Navbar() {
               ))}
               <div className="pt-4 pb-2">
                 <Link
-                  href="/mortgage-calculator"
+                  href="/mortgage-calculator/"
                   onClick={() => setIsOpen(false)}
                   className="block w-full text-center bg-primary text-white px-4 py-3 rounded-full font-medium hover:brightness-110 transition-all"
                 >

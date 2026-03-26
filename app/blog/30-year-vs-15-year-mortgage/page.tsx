@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import InternalLinks from "@/components/ui/InternalLinks";
 
 export const metadata: Metadata = {
   title: "30-Year vs 15-Year Mortgage | ClearNest",
   description: "Decide between a 15-year and 30-year mortgage by comparing monthly payments and total interest costs.",
-  alternates: { canonical: "https://clearnestcalculator.site/blog/30-year-vs-15-year-mortgage" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/30-year-vs-15-year-mortgage/" },
 };
 
 export default function BlogPost() {
@@ -21,9 +22,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
-    { name: "30-Year vs 15-Year Mortgage", url: "https://clearnestcalculator.site/blog/30-year-vs-15-year-mortgage" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog/" },
+    { name: "30-Year vs 15-Year Mortgage", url: "https://clearnestcalculator.site/blog/30-year-vs-15-year-mortgage/" }
   ];
 
   return (
@@ -100,7 +101,7 @@ export default function BlogPost() {
         <div className="bg-slate-50 p-8 rounded-2xl border border-border my-10 text-center">
           <h3 className="text-2xl font-bold mb-4">Compare Terms Side-by-Side</h3>
           <p className="mb-6 text-text-muted">Use our amortization calculator to see the exact difference in monthly payments and total interest between a 15-year and 30-year loan.</p>
-          <Link href="/amortization-calculator" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+          <Link href="/amortization-calculator/" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
             Compare Amortization Schedules
           </Link>
         </div>

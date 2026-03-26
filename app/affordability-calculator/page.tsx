@@ -7,7 +7,7 @@ import InternalLinks from "@/components/ui/InternalLinks";
 export const metadata: Metadata = {
   title: "How Much House Can I Afford? Affordability Calculator",
   description: "Find out how much house you can afford based on your income, debts, and down payment. Calculate your maximum home price and loan limit today.",
-  alternates: { canonical: "https://clearnestcalculator.site/affordability-calculator" },
+  alternates: { canonical: "https://clearnestcalculator.site/affordability-calculator/" },
 };
 
 export default function AffordabilityCalculatorPage() {
@@ -22,8 +22,8 @@ export default function AffordabilityCalculatorPage() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Affordability Calculator", url: "https://clearnestcalculator.site/affordability-calculator" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Affordability Calculator", url: "https://clearnestcalculator.site/affordability-calculator/" }
   ];
 
   return (
@@ -100,12 +100,12 @@ export default function AffordabilityCalculatorPage() {
 
       <InternalLinks
         calculators={[
-          { name: "Mortgage Calculator", href: "/mortgage-calculator" },
-          { name: "Rent vs Buy Calculator", href: "/rent-vs-buy-calculator" }
+          { name: "Mortgage Calculator", href: "/mortgage-calculator/" },
+          { name: "Rent vs Buy Calculator", href: "/rent-vs-buy-calculator/" }
         ]}
         articles={[
-          { name: "How Much House Can I Afford?", href: "/blog/how-much-house-can-i-afford" },
-          { name: "What Credit Score Do I Need to Buy a House?", href: "/blog/what-credit-score-to-buy-house" }
+          { name: "How Much House Can I Afford?", href: "/blog/how-much-house-can-i-afford/" },
+          { name: "What Credit Score Do I Need to Buy a House?", href: "/blog/what-credit-score-to-buy-house/" }
         ]}
       />
     </div>

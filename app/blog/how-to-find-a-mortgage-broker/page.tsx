@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import InternalLinks from "@/components/ui/InternalLinks";
 
 export const metadata: Metadata = {
     title: "How to Find a Mortgage Broker in 2026 | ClearNest",
     description: "Looking for a mortgage broker near you? Learn the steps to find, interview, and compare mortgage brokers to secure the best 30-year fixed rates in 2026.",
-    alternates: { canonical: "https://clearnestcalculator.site/blog/how-to-find-a-mortgage-broker" },
+    alternates: { canonical: "https://clearnestcalculator.site/blog/how-to-find-a-mortgage-broker/" },
 };
 
 export default function BlogPost() {
@@ -21,9 +22,9 @@ export default function BlogPost() {
     };
 
     const breadcrumbs = [
-        { name: "Home", url: "https://clearnestcalculator.site" },
-        { name: "Blog", url: "https://clearnestcalculator.site/blog" },
-        { name: "How to Find a Mortgage Broker", url: "https://clearnestcalculator.site/blog/how-to-find-a-mortgage-broker" }
+        { name: "Home", url: "https://clearnestcalculator.site/" },
+        { name: "Blog", url: "https://clearnestcalculator.site/blog/" },
+        { name: "How to Find a Mortgage Broker", url: "https://clearnestcalculator.site/blog/how-to-find-a-mortgage-broker/" }
     ];
 
     return (
@@ -95,7 +96,7 @@ export default function BlogPost() {
                 <div className="bg-slate-50 p-8 rounded-2xl border border-border my-10 text-center">
                     <h3 className="text-2xl font-bold mb-4">Know Your Numbers First</h3>
                     <p className="mb-6 text-text-muted">Before talking to a broker, get a baseline of what you can afford and what current rates look like.</p>
-                    <Link href="/mortgage-calculator" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+                    <Link href="/mortgage-calculator/" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
                         Use the Free Mortgage Calculator
                     </Link>
                 </div>

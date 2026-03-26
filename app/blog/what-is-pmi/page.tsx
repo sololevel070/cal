@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import InternalLinks from "@/components/ui/InternalLinks";
 
 export const metadata: Metadata = {
   title: "What is PMI (Private Mortgage Insurance)? | ClearNest",
   description: "Understand what PMI is, how much it costs, and how you can avoid paying it or get rid of it early.",
-  alternates: { canonical: "https://clearnestcalculator.site/blog/what-is-pmi" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/what-is-pmi/" },
 };
 
 export default function BlogPost() {
@@ -21,9 +22,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
-    { name: "What is PMI", url: "https://clearnestcalculator.site/blog/what-is-pmi" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog/" },
+    { name: "What is PMI", url: "https://clearnestcalculator.site/blog/what-is-pmi/" }
   ];
 
   return (
@@ -96,7 +97,7 @@ export default function BlogPost() {
         <div className="bg-slate-50 p-8 rounded-2xl border border-border my-10 text-center">
           <h3 className="text-2xl font-bold mb-4">Calculate Your PMI</h3>
           <p className="mb-6 text-text-muted">Use our mortgage calculator to see exactly how much PMI will add to your monthly payment.</p>
-          <Link href="/mortgage-calculator" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+          <Link href="/mortgage-calculator/" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
             Calculate Mortgage with PMI
           </Link>
         </div>

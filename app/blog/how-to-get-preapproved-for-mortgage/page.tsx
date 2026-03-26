@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import InternalLinks from "@/components/ui/InternalLinks";
 
 export const metadata: Metadata = {
     title: "How to Get Preapproved for a Mortgage in 2026 | ClearNest",
     description: "Learn the exact steps to get preapproved for a mortgage in 2026. Discover the requirements, how your credit score affects the process, and what documents you need.",
-    alternates: { canonical: "https://clearnestcalculator.site/blog/how-to-get-preapproved-for-mortgage" },
+    alternates: { canonical: "https://clearnestcalculator.site/blog/how-to-get-preapproved-for-mortgage/" },
 };
 
 export default function BlogPost() {
@@ -21,9 +22,9 @@ export default function BlogPost() {
     };
 
     const breadcrumbs = [
-        { name: "Home", url: "https://clearnestcalculator.site" },
-        { name: "Blog", url: "https://clearnestcalculator.site/blog" },
-        { name: "How to Get Preapproved for a Mortgage", url: "https://clearnestcalculator.site/blog/how-to-get-preapproved-for-mortgage" }
+        { name: "Home", url: "https://clearnestcalculator.site/" },
+        { name: "Blog", url: "https://clearnestcalculator.site/blog/" },
+        { name: "How to Get Preapproved for a Mortgage", url: "https://clearnestcalculator.site/blog/how-to-get-preapproved-for-mortgage/" }
     ];
 
     return (
@@ -96,7 +97,7 @@ export default function BlogPost() {
                 <div className="bg-slate-50 p-8 rounded-2xl border border-border my-10 text-center">
                     <h3 className="text-2xl font-bold mb-4">Ready to See Your Numbers?</h3>
                     <p className="mb-6 text-text-muted">Use our free mortgage calculator to estimate your payments before you get preapproved.</p>
-                    <Link href="/mortgage-calculator" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+                    <Link href="/mortgage-calculator/" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
                         Try the Calculator
                     </Link>
                 </div>

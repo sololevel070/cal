@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import InternalLinks from "@/components/ui/InternalLinks";
 
 export const metadata: Metadata = {
   title: "FHA vs Conventional Loan | ClearNest",
   description: "Compare FHA and conventional mortgages to find the best fit for your credit score and down payment.",
-  alternates: { canonical: "https://clearnestcalculator.site/blog/fha-vs-conventional-loan" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/fha-vs-conventional-loan/" },
 };
 
 export default function BlogPost() {
@@ -21,9 +22,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
-    { name: "FHA vs Conventional Loan", url: "https://clearnestcalculator.site/blog/fha-vs-conventional-loan" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog/" },
+    { name: "FHA vs Conventional Loan", url: "https://clearnestcalculator.site/blog/fha-vs-conventional-loan/" }
   ];
 
   return (
@@ -91,7 +92,7 @@ export default function BlogPost() {
         <div className="bg-slate-50 p-8 rounded-2xl border border-border my-10 text-center">
           <h3 className="text-2xl font-bold mb-4">Compare Your Options</h3>
           <p className="mb-6 text-text-muted">Use our mortgage calculator to see how different loan types affect your monthly payment.</p>
-          <Link href="/mortgage-calculator" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+          <Link href="/mortgage-calculator/" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
             Calculate Mortgage Payment
           </Link>
         </div>

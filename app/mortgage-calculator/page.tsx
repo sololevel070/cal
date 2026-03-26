@@ -7,11 +7,11 @@ import InternalLinks from "@/components/ui/InternalLinks";
 export const metadata: Metadata = {
   title: "Mortgage Calculator: Estimate Payment with Taxes & PMI",
   description: "Free mortgage calculator with taxes, insurance, and PMI. Instantly calculate your 30-year or 15-year monthly payment with an amortization schedule.",
-  alternates: { canonical: "https://clearnestcalculator.site/mortgage-calculator" },
+  alternates: { canonical: "https://clearnestcalculator.site/mortgage-calculator/" },
   openGraph: {
     title: "Free Mortgage Calculator | ClearNest",
     description: "Calculate monthly mortgage payments instantly.",
-    url: "https://clearnestcalculator.site/mortgage-calculator",
+    url: "https://clearnestcalculator.site/mortgage-calculator/",
     siteName: "ClearNest",
     locale: "en_US",
     type: "website"
@@ -32,8 +32,8 @@ export default function MortgageCalculatorPage() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Mortgage Calculator", url: "https://clearnestcalculator.site/mortgage-calculator" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Mortgage Calculator", url: "https://clearnestcalculator.site/mortgage-calculator/" }
   ];
 
   return (
@@ -124,14 +124,14 @@ export default function MortgageCalculatorPage() {
 
       <InternalLinks
         calculators={[
-          { name: "Amortization Calculator", href: "/amortization-calculator" },
-          { name: "Rent vs Buy Calculator", href: "/rent-vs-buy-calculator" },
-          { name: "Affordability Calculator", href: "/affordability-calculator" }
+          { name: "Amortization Calculator", href: "/amortization-calculator/" },
+          { name: "Rent vs Buy Calculator", href: "/rent-vs-buy-calculator/" },
+          { name: "Affordability Calculator", href: "/affordability-calculator/" }
         ]}
         articles={[
-          { name: "30-Year vs. 15-Year Mortgage", href: "/blog/30-year-vs-15-year-mortgage" },
-          { name: "What is Private Mortgage Insurance (PMI)?", href: "/blog/what-is-pmi" },
-          { name: "FHA vs. Conventional Loans", href: "/blog/fha-vs-conventional-loan" }
+          { name: "30-Year vs. 15-Year Mortgage", href: "/blog/30-year-vs-15-year-mortgage/" },
+          { name: "What is Private Mortgage Insurance (PMI)?", href: "/blog/what-is-pmi/" },
+          { name: "FHA vs. Conventional Loans", href: "/blog/fha-vs-conventional-loan/" }
         ]}
       />
     </div>

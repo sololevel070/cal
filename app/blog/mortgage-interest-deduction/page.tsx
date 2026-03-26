@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import InternalLinks from "@/components/ui/InternalLinks";
 
 export const metadata: Metadata = {
     title: "Mortgage Interest Deduction 2026: Rules & Limits | ClearNest",
     description: "Learn about the permanent 2026 mortgage interest deduction rules. Find out how much interest you can deduct, PMI deductibility, and whether you should itemize.",
-    alternates: { canonical: "https://clearnestcalculator.site/blog/mortgage-interest-deduction" },
+    alternates: { canonical: "https://clearnestcalculator.site/blog/mortgage-interest-deduction/" },
 };
 
 export default function BlogPost() {
@@ -21,9 +22,9 @@ export default function BlogPost() {
     };
 
     const breadcrumbs = [
-        { name: "Home", url: "https://clearnestcalculator.site" },
-        { name: "Blog", url: "https://clearnestcalculator.site/blog" },
-        { name: "Mortgage Interest Deduction 2026", url: "https://clearnestcalculator.site/blog/mortgage-interest-deduction" }
+        { name: "Home", url: "https://clearnestcalculator.site/" },
+        { name: "Blog", url: "https://clearnestcalculator.site/blog/" },
+        { name: "Mortgage Interest Deduction 2026", url: "https://clearnestcalculator.site/blog/mortgage-interest-deduction/" }
     ];
 
     return (
@@ -92,7 +93,7 @@ export default function BlogPost() {
                 <div className="bg-slate-50 p-8 rounded-2xl border border-border my-10 text-center">
                     <h3 className="text-2xl font-bold mb-4">Want to See How Much Interest You Pay?</h3>
                     <p className="mb-6 text-text-muted">Use our Amortization Calculator to see your exact interest payments year by year, helping you estimate your potential tax deductions.</p>
-                    <Link href="/amortization-calculator" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+                    <Link href="/amortization-calculator/" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
                         View Amortization Schedule
                     </Link>
                 </div>

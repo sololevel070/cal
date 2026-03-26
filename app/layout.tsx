@@ -14,7 +14,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: 'ClearNest — Free US Mortgage Calculator',
   description: 'Calculate your monthly mortgage payment instantly. Includes taxes, insurance, PMI, and full amortization schedule. Free, fast, and mobile-friendly.',
-  metadataBase: new URL('https://clearnestcalculator.site'),
+  metadataBase: new URL('https://clearnestcalculator.site/'),
 
   alternates: {
     canonical: 'https://clearnestcalculator.site/',

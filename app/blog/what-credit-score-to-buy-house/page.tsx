@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import InternalLinks from "@/components/ui/InternalLinks";
 
 export const metadata: Metadata = {
   title: "What Credit Score Do You Need to Buy a House? | ClearNest",
   description: "Find out the minimum credit score requirements for different types of home loans and how to improve yours.",
-  alternates: { canonical: "https://clearnestcalculator.site/blog/what-credit-score-to-buy-house" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/what-credit-score-to-buy-house/" },
 };
 
 export default function BlogPost() {
@@ -21,9 +22,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
-    { name: "What Credit Score Do You Need", url: "https://clearnestcalculator.site/blog/what-credit-score-to-buy-house" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog/" },
+    { name: "What Credit Score Do You Need", url: "https://clearnestcalculator.site/blog/what-credit-score-to-buy-house/" }
   ];
 
   return (
@@ -91,7 +92,7 @@ export default function BlogPost() {
         <div className="bg-slate-50 p-8 rounded-2xl border border-border my-10 text-center">
           <h3 className="text-2xl font-bold mb-4">See How Rates Affect Your Payment</h3>
           <p className="mb-6 text-text-muted">Use our mortgage calculator to test different interest rates and see how they impact your monthly payment.</p>
-          <Link href="/mortgage-calculator" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+          <Link href="/mortgage-calculator/" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
             Calculate Mortgage Payment
           </Link>
         </div>

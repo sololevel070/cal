@@ -2,11 +2,12 @@ import { Metadata } from "next";
 import Link from "next/link";
 import SchemaMarkup from "@/components/seo/SchemaMarkup";
 import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
+import InternalLinks from "@/components/ui/InternalLinks";
 
 export const metadata: Metadata = {
   title: "How Much House Can I Afford? | ClearNest",
   description: "Learn how to calculate your homebuying budget using the 28/43 rule and understand what lenders look for when approving your mortgage.",
-  alternates: { canonical: "https://clearnestcalculator.site/blog/how-much-house-can-i-afford" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/how-much-house-can-i-afford/" },
 };
 
 export default function BlogPost() {
@@ -21,9 +22,9 @@ export default function BlogPost() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Blog", url: "https://clearnestcalculator.site/blog" },
-    { name: "How Much House Can I Afford?", url: "https://clearnestcalculator.site/blog/how-much-house-can-i-afford" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog/" },
+    { name: "How Much House Can I Afford?", url: "https://clearnestcalculator.site/blog/how-much-house-can-i-afford/" }
   ];
 
   return (
@@ -117,8 +118,8 @@ export default function BlogPost() {
           While the 28/43 rule is a great starting point, lenders also look at:
         </p>
         <ul className="list-disc pl-6 mb-6">
-          <li><strong>Credit Score:</strong> A higher score can qualify you for a lower interest rate, which increases your purchasing power. <Link href="/blog/what-credit-score-to-buy-house" className="text-primary hover:underline">Learn more about credit scores.</Link></li>
-          <li><strong>Down Payment:</strong> A larger down payment reduces your loan amount and can eliminate the need for Private Mortgage Insurance (PMI). <Link href="/blog/what-is-pmi" className="text-primary hover:underline">Learn more about PMI.</Link></li>
+          <li><strong>Credit Score:</strong> A higher score can qualify you for a lower interest rate, which increases your purchasing power. <Link href="/blog/what-credit-score-to-buy-house/" className="text-primary hover:underline">Learn more about credit scores.</Link></li>
+          <li><strong>Down Payment:</strong> A larger down payment reduces your loan amount and can eliminate the need for Private Mortgage Insurance (PMI). <Link href="/blog/what-is-pmi/" className="text-primary hover:underline">Learn more about PMI.</Link></li>
           <li><strong>Employment History:</strong> Lenders typically want to see at least two years of stable employment in the same industry.</li>
           <li><strong>Cash Reserves:</strong> Having savings left over after closing shows lenders you can handle unexpected expenses.</li>
         </ul>
@@ -126,7 +127,7 @@ export default function BlogPost() {
         <div className="bg-slate-50 p-8 rounded-2xl border border-border my-10 text-center">
           <h3 className="text-2xl font-bold mb-4">Ready to see your numbers?</h3>
           <p className="mb-6 text-text-muted">Use our free affordability calculator to get a personalized estimate based on your exact income and debts.</p>
-          <Link href="/affordability-calculator" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
+          <Link href="/affordability-calculator/" className="inline-block bg-primary text-white px-8 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors">
             Calculate My Affordability
           </Link>
         </div>

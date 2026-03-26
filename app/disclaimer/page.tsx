@@ -5,7 +5,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "Disclaimer | ClearNest",
   description: "Legal disclaimer and terms of use for the ClearNest mortgage calculator website.",
-  alternates: { canonical: "https://clearnestcalculator.site/disclaimer" },
+  alternates: { canonical: "https://clearnestcalculator.site/disclaimer/" },
 };
 
 export default function DisclaimerPage() {
@@ -17,8 +17,8 @@ export default function DisclaimerPage() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Disclaimer", url: "https://clearnestcalculator.site/disclaimer" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Disclaimer", url: "https://clearnestcalculator.site/disclaimer/" }
   ];
 
   return (

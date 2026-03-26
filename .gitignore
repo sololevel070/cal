@@ -37,3 +37,6 @@ yarn-error.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Google Search Console
+kinetic-star-467104-q1-074e495134f6.json

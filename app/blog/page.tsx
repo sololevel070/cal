@@ -6,7 +6,7 @@ import BreadcrumbSchema from "@/components/seo/BreadcrumbSchema";
 export const metadata: Metadata = {
   title: "Mortgage & Homebuying Blog | ClearNest",
   description: "Learn everything you need to know about mortgages, homebuying, and personal finance.",
-  alternates: { canonical: "https://clearnestcalculator.site/blog" },
+  alternates: { canonical: "https://clearnestcalculator.site/blog/" },
 };
 
 const posts = [
@@ -89,12 +89,12 @@ export default function BlogPage() {
     "@context": "https://schema.org",
     "@type": "Blog",
     "name": "ClearNest Mortgage Blog",
-    "url": "https://clearnestcalculator.site/blog"
+    "url": "https://clearnestcalculator.site/blog/"
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Blog", url: "https://clearnestcalculator.site/blog" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Blog", url: "https://clearnestcalculator.site/blog/" }
   ];
 
   return (
@@ -111,7 +111,7 @@ export default function BlogPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
-          <Link href={`/blog/${post.slug}`} key={post.slug} className="group">
+          <Link href={`/blog/${post.slug}/`} key={post.slug} className="group">
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-border h-full transition-all hover:shadow-md hover:border-primary/30">
               <div className="text-sm text-text-muted mb-3">{post.date}</div>
               <h2 className="text-xl font-semibold text-text-primary mb-3 group-hover:text-primary transition-colors">

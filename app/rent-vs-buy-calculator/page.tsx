@@ -7,7 +7,7 @@ import InternalLinks from "@/components/ui/InternalLinks";
 export const metadata: Metadata = {
   title: "Rent vs Buy Home Calculator: Is Buying Better Than Renting?",
   description: "Compare the total cost of renting versus buying a home. Use our rent vs buy calculator to see which path builds more wealth over the next 10 years.",
-  alternates: { canonical: "https://clearnestcalculator.site/rent-vs-buy-calculator" },
+  alternates: { canonical: "https://clearnestcalculator.site/rent-vs-buy-calculator/" },
 };
 
 export default function RentVsBuyCalculatorPage() {
@@ -22,8 +22,8 @@ export default function RentVsBuyCalculatorPage() {
   };
 
   const breadcrumbs = [
-    { name: "Home", url: "https://clearnestcalculator.site" },
-    { name: "Rent vs Buy Calculator", url: "https://clearnestcalculator.site/rent-vs-buy-calculator" }
+    { name: "Home", url: "https://clearnestcalculator.site/" },
+    { name: "Rent vs Buy Calculator", url: "https://clearnestcalculator.site/rent-vs-buy-calculator/" }
   ];
 
   return (
@@ -93,12 +93,12 @@ export default function RentVsBuyCalculatorPage() {
 
       <InternalLinks
         calculators={[
-          { name: "Mortgage Calculator", href: "/mortgage-calculator" },
-          { name: "Affordability Calculator", href: "/affordability-calculator" }
+          { name: "Mortgage Calculator", href: "/mortgage-calculator/" },
+          { name: "Affordability Calculator", href: "/affordability-calculator/" }
         ]}
         articles={[
-          { name: "FHA vs. Conventional Loans", href: "/blog/fha-vs-conventional-loan" },
-          { name: "How Much House Can I Afford?", href: "/blog/how-much-house-can-i-afford" }
+          { name: "FHA vs. Conventional Loans", href: "/blog/fha-vs-conventional-loan/" },
+          { name: "How Much House Can I Afford?", href: "/blog/how-much-house-can-i-afford/" }
         ]}
       />
     </div>
