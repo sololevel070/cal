@@ -2,9 +2,7 @@
 # NOTE: Cloudflare Pages usually rejects these in this file. 
 # If your logs show "0 valid rules" again, please use the Cloudflare Dashboard instead.
 
-https://www.clearnestcalculator.site/* https://clearnestcalculator.site/:splat 301
-https://clearnest-calculator.pages.dev/* https://clearnestcalculator.site/:splat 301
-https://clearnestcalculator.pages.dev/* https://clearnestcalculator.site/:splat 301
+
 
 # --- SPA Routing ---
 # Handled automatically by Next.js static export
