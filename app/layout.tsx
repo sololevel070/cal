@@ -92,20 +92,25 @@ export default function RootLayout({
                 var p = window.location.pathname;
                 var s = window.location.search;
 
-                // 1. Full Domain Redirection (self-healing for lack of dashboard rules)
+                // 1. Full Domain Redirection (self-healing)
                 if (h === 'www.clearnestcalculator.site' || h.includes('.pages.dev')) {
                   window.location.replace('https://clearnestcalculator.site' + p + s);
                   return;
                 }
 
-                // 2. Prevent indexing of preview domains (Double protection)
-                if (h.includes('.pages.dev')) {
-                  var r = document.createElement('meta');
-                  r.name = 'robots'; r.content = 'noindex, nofollow';
-                  document.head.appendChild(r);
+                // 2. Disable pages.dev Indexing (User Requested Best Fix)
+                if (h.includes('pages.dev')) {
+                  var metaRobots = document.querySelector('meta[name="robots"]');
+                  if (metaRobots) {
+                    metaRobots.setAttribute('content', 'noindex, nofollow');
+                  } else {
+                    var r = document.createElement('meta');
+                    r.name = 'robots'; r.content = 'noindex, nofollow';
+                    document.head.appendChild(r);
+                  }
                 }
 
-                // 3. Forced Canonical Consistency (ensures trailing slashes & absolute custom domain)
+                // 3. Forced Canonical Consistency (ensures trailing slashes)
                 var c = document.querySelector('link[rel="canonical"]');
                 if (!c) {
                   c = document.createElement('link');
