@@ -1,13 +1,7 @@
-# Noindex for Cloudflare default domains
-https://clearnestcalculator.pages.dev/*
-  X-Robots-Tag: noindex
-
-https://clearnest-calculator.pages.dev/*
-  X-Robots-Tag: noindex
-
-# Security and Cache Headers for main domain
+# Custom security headers for all paths
 /*
   X-Frame-Options: DENY
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-XSS-Protection: 1; mode=block

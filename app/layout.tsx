@@ -15,7 +15,9 @@ export const metadata: Metadata = {
   title: 'ClearNest — Free US Mortgage Calculator',
   description: 'Calculate your monthly mortgage payment instantly. Includes taxes, insurance, PMI, and full amortization schedule. Free, fast, and mobile-friendly.',
   metadataBase: new URL('https://clearnestcalculator.site/'),
-
+  alternates: {
+    canonical: './',
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -80,6 +82,42 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
+      <head>
+        {/* Dynamic Fix for Domain Redirection, pages.dev Indexing & Canonical Consistency */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                var h = window.location.hostname;
+                var p = window.location.pathname;
+                var s = window.location.search;
+
+                // 1. Full Domain Redirection (self-healing for lack of dashboard rules)
+                if (h === 'www.clearnestcalculator.site' || h.includes('.pages.dev')) {
+                  window.location.replace('https://clearnestcalculator.site' + p + s);
+                  return;
+                }
+
+                // 2. Prevent indexing of preview domains (Double protection)
+                if (h.includes('.pages.dev')) {
+                  var r = document.createElement('meta');
+                  r.name = 'robots'; r.content = 'noindex, nofollow';
+                  document.head.appendChild(r);
+                }
+
+                // 3. Forced Canonical Consistency (ensures trailing slashes & absolute custom domain)
+                var c = document.querySelector('link[rel="canonical"]');
+                if (!c) {
+                  c = document.createElement('link');
+                  c.rel = 'canonical';
+                  document.head.appendChild(c);
+                }
+                c.href = 'https://clearnestcalculator.site' + (p === '/' ? '/' : p.replace(/\\/$/, '') + '/');
+              })();
+            `
+          }}
+        />
+      </head>
       <body suppressHydrationWarning className={`${inter.className} bg-slate-50 text-slate-900 overflow-x-hidden min-h-screen flex flex-col`}>
         <Navbar />
         <main className="flex-1 pb-24 lg:pb-0">
