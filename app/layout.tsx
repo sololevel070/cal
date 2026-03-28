@@ -16,9 +16,6 @@ export const metadata: Metadata = {
   description: 'Calculate your monthly mortgage payment instantly. Includes taxes, insurance, PMI, and full amortization schedule. Free, fast, and mobile-friendly.',
   metadataBase: new URL('https://clearnestcalculator.site/'),
 
-  alternates: {
-    canonical: 'https://clearnestcalculator.site/',
-  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },

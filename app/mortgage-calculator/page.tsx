@@ -28,7 +28,7 @@ export default function MortgageCalculatorPage() {
     "description": "Free US mortgage calculator with amortization schedule, taxes, insurance, and PMI",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "featureList": "Monthly payment, amortization table, extra payments, charts, share results",
-    "url": "https://clearnestcalculator.site/mortgage-calculator"
+    "url": "https://clearnestcalculator.site/mortgage-calculator/"
   };
 
   const breadcrumbs = [

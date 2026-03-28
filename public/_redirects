@@ -1,2 +1,8 @@
+# Force custom domain
+https://clearnestcalculator.pages.dev/* https://clearnestcalculator.site/:splat 301
+https://clearnest-calculator.pages.dev/* https://clearnestcalculator.site/:splat 301
 https://www.clearnestcalculator.site/* https://clearnestcalculator.site/:splat 301
+
+# SPA Routing (keep at bottom)
 /* /index.html 200
+

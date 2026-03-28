@@ -18,7 +18,7 @@ export default function RefinanceCalculatorPage() {
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "description": "Calculate how much you can save by refinancing your mortgage.",
-    "url": "https://clearnestcalculator.site/refinance-calculator"
+    "url": "https://clearnestcalculator.site/refinance-calculator/"
   };
 
   const breadcrumbs = [

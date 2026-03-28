@@ -18,7 +18,7 @@ export default function AffordabilityCalculatorPage() {
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "description": "Calculate how much house you can afford based on your income, debts, and down payment.",
-    "url": "https://clearnestcalculator.site/affordability-calculator"
+    "url": "https://clearnestcalculator.site/affordability-calculator/"
   };
 
   const breadcrumbs = [

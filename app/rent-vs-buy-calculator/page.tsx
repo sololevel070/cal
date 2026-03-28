@@ -18,7 +18,7 @@ export default function RentVsBuyCalculatorPage() {
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "description": "Compare renting vs buying a home to find the most cost-effective option over time.",
-    "url": "https://clearnestcalculator.site/rent-vs-buy-calculator"
+    "url": "https://clearnestcalculator.site/rent-vs-buy-calculator/"
   };
 
   const breadcrumbs = [

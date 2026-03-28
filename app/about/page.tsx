@@ -14,7 +14,7 @@ export default function AboutPage() {
     "@type": "AboutPage",
     "name": "About ClearNest",
     "description": "Learn about ClearNest's mission to provide transparent, accurate, and easy-to-use mortgage tools for homebuyers.",
-    "url": "https://clearnestcalculator.site/about"
+    "url": "https://clearnestcalculator.site/about/"
   };
 
   const breadcrumbs = [

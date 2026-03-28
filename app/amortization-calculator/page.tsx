@@ -18,7 +18,7 @@ export default function AmortizationCalculatorPage() {
     "applicationCategory": "FinanceApplication",
     "operatingSystem": "Any",
     "description": "Calculate your mortgage amortization schedule and see how extra payments can save you money.",
-    "url": "https://clearnestcalculator.site/amortization-calculator"
+    "url": "https://clearnestcalculator.site/amortization-calculator/"
   };
 
   const breadcrumbs = [
